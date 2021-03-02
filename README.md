@@ -1,16 +1,16 @@
 # micropool-gui
-Minimal Swap Pool
+Minimal Crypto Pool
 
 ![screenshot](https://cdn.discordapp.com/attachments/515039248915628032/715245603642277928/swap_micropool_v1_5.PNG)
 
 
 
-How to Guide: https://github.com/swap-dev/swap/wiki/Swap-Micropool-How-to-Guide
+How to Guide: https://github.com/GonzoTheDev/crypto/wiki/Crypto-Micropool-How-to-Guide
 
 To run micropool-gui as a nodejs/electronjs app:
 
     $ npm install electron -g
-    $ git clone https://github.com/swap-dev/micropool-gui.git
+    $ git clone https://github.com/GonzoTheDev/micropool-gui.git
     $ cd micropool-gui
     $ npm install
     $ npm start
@@ -18,7 +18,7 @@ To run micropool-gui as a nodejs/electronjs app:
 To build the micropool as a standalone executable:
 
     $ npm install electron-builder -g
-    $ git clone https://github.com/swap-dev/micropool-gui.git
+    $ git clone https://github.com/GonzoTheDev/micropool-gui.git
     $ cd micropool-gui
     $ npm install
     $ electron-builder --linux

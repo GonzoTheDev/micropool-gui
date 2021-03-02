@@ -13,7 +13,7 @@ var conn=0;
 
 global.poolconfig = { 
 	poolport:0, 
-	ctrlport:14651,// use with https://github.com/swap-dev/on-block-notify.git
+	ctrlport:42069,// use with https://github.com/GonzoTheDev/on-block-notify.git
 	daemonport:0,
 	daemonhost:'',
 	mining_address:''
@@ -197,7 +197,7 @@ function updateJob(reason,callback){
 			mainWindow.webContents.send('get-reply', ['data_diff',result.difficulty]);
 			mainWindow.webContents.send('get-reply', ['data_height',result.height]);
 			mainWindow.webContents.send('get-reply', ['data_netgraphrate', (current_target / 15000 * 32).toFixed(2) + ' KGps' ]);
-			mainWindow.webContents.send('get-reply', ['data_reward',current_reward.toFixed(2) + ' XWP']);
+			mainWindow.webContents.send('get-reply', ['data_reward',current_reward.toFixed(2) + ' CRYPTO']);
 
 		
 			for (var minerId in connectedMiners){
@@ -409,7 +409,7 @@ function handleClient(data,miner){
 				etaTime.setSeconds(0)
 			}
 			mainWindow.webContents.send('get-reply', ['data_blocketa', etaTime.toISOString().substr(11, 8)+'s']);
-			mainWindow.webContents.send('get-reply', ['data_revenue', ((totalgps * 86400 / current_target) * (current_reward / 32)).toFixed(2) +' XWP']);
+			mainWindow.webContents.send('get-reply', ['data_revenue', ((totalgps * 86400 / current_target) * (current_reward / 32)).toFixed(2) +' CRYPTO']);
 
 			logger.info('share ('+miner.login+') '+miner.difficulty+' ('+hashrate(miner)+')');
 			return miner.respose('ok',null,request);
@@ -458,7 +458,7 @@ let mainWindow;
 function createWindow () {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
-		title: 'Swap Micropool',
+		title: 'CRypto Micropool',
 		width: 1000,
 		height: 800,
 		minWidth: 800,
@@ -492,7 +492,7 @@ function createWindow () {
 			started=1;
 			updateJob('init',function(){
 				server.listen(global.poolconfig.poolport,'0.0.0.0');
-				logger.info("start swap micropool, port "+global.poolconfig.poolport);
+				logger.info("start crypto micropool, port "+global.poolconfig.poolport);
 				lastBlockFoundTime  = Date.now();
 			});
 			setInterval(function(){updateJob('timer');}, 100);
@@ -521,7 +521,7 @@ function createWindow () {
 						started=1;
 						updateJob('init',function(){
 							server.listen(global.poolconfig.poolport,'0.0.0.0');
-							logger.info("start swap micropool, port "+global.poolconfig.poolport);
+							logger.info("start crypto micropool, port "+global.poolconfig.poolport);
 							lastBlockFoundTime  = Date.now();
 						});
 						setInterval(function(){updateJob('timer');}, 100);

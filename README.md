@@ -1,7 +1,7 @@
 # micropool-gui
 Minimal Crypto Pool
 
-![screenshot](https://cdn.discordapp.com/attachments/515039248915628032/715245603642277928/swap_micropool_v1_5.PNG)
+![screenshot](https://media.discordapp.net/attachments/809863850526244865/816388094613520424/micropool.png)
 
 
 
